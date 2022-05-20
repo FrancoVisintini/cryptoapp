@@ -1,0 +1,20 @@
+.Header {
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	flex-direction: row;
+	min-height: 15vh;
+	width: 100%;
+	background: rgb(25, 23, 44);
+	color: white;
+}
+
+.Header h1 {
+	font-size: 30px;
+    margin-left:5vw;
+    padding: 0
+}
+
+.Header img {
+    height: 20vh;
+}

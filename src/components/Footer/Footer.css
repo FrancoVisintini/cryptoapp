@@ -1,0 +1,20 @@
+.Footer {
+	display: flex;
+	justify-content:space-evenly;
+	align-items: center;
+	flex-direction: row;
+	height: 10vh;
+	width: 100%;
+	background: rgb(25, 23, 44);
+	color: white;
+}
+
+.Footer h1 {
+	font-size: 30px;
+    margin-left:5vw;
+    padding: 0
+}
+
+.Footer img {
+    height: 20vh;
+}
