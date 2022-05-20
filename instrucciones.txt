@@ -1,0 +1,78 @@
+CryptoApp
+
+Para el próximo laboratorio vamos a observar sus aplicaciones de forma individual, con un poco más de complejidad. 
+
+Les pedimos que realicen y entreguen antes del 26 de Mayo, una app que tenga los conceptos vistos hasta el momento.
+
+Temática: cryptocurrency. 
+
+API sugerida: https://documenter.getpostman.com/view/5734027/RzZ6Hzr3
+
+Si necesitan más funcionalidades podemos armar un mockup, pero con esto alcanzaría por lo pronto para realizar lo que detallamos abajo.
+
+Queremos ver aplicaciones que nos muestren una tabla con la cotización en tiempo real de las principales criptomonedas del momento. 
+
+Elementos que debe tener la app:
+
+- Header y Footer: se tienen que ver en todas las vistas y deben estar correctamente plasmados en el DOM
+
+- NavBar o SideBar (a elección de ustedes) con estilos
+
+- Vistas o rutas: 
+
+	"/" : Home, 
+
+	"/about" About us (descripción de ustedes para conocerlos más),
+
+	"/coins": vista a una tabla con cada crypto. Como mínimo debe tener:
+
+		Posición, Nombre de la Crypto, código (BTC, ETH, DAI, etc), valores en Dólares (opcional agregar el valor en Pesos), porcentaje que subió o bajó
+
+	"/coins/:id" Cuando haga click en un botón "ver detalle" o similar accionar dentro de la tabla, 
+
+	me tiene que dirigir una ruta con la vista detallada de la crypto elegida. Allí tengo que poder ver el logo de la crypto, el link oficial, una descripción si la tiene, el valor en dólares, y otra info que consideren. Todo viene desde la API.
+
+	"/*" Página 404
+
+	Página en construcción empty
+
+Cosas importantes a evaluar: el/los fetch deben estar manejados dentro de useEffect en componentes contenedores. 
+
+Los elementos de la interfaz tienen que estar en componentes stateless o de presentación, no deben idealmente contener lógica de negocio sino solo presentar info. 
+
+Cosas que tienen que usar si o si:
+
+1) componentes funcionales, useState, useEffect, manejo de props. 
+
+2) react-router-dom version 6 (si usan la 5 con precaución: ojo con Switch, con los hooks)
+
+3) PascalCase para nombrar componentes, camelCase para eventos, destructuring en las props.
+
+Cosas que suman si intentan hacerlas, pero no son obligatorias: 
+
+- agregar propTypes, defaultProps, customHooks, librerías sencillas nuevas, estilos. Loading o placeholders de carga, lo que les resulte más simple.
+
+- incorporar una barra de búsqueda de crypto, charts, lo que consideren que pueden hacer me piden y lo hacemos o buscamos una librería para llevarlo a cabo.
+
+- Utilizar herramientas de estilo como Material UI, Bootstrap-react, etc va a ser un plus para ustedes. No es necesario darle una apariencia 100% perfecta, pero los va a ayudar con las tablas, botones, navBar/sideBar, búsqueda.
+
+Cosas que deberían hacer si se traban en algo:
+
+pedir ayuda cuando la necesiten, es una app compleja y van a requerir que nos ayudemos entre todos. 
+
+
+
+Criterios de evaluación: 
+
+Vamos a observar si pudieron pensar adecuadamente la estrategia de la app antes de comenzar a sumar código; 
+
+si las rutas están bien definidas, si la navegación es correcta. 
+
+Vamos a evaluar los estados individuales de cada componente y como utilicen los hooks en la aplicación para manejar los efectos. 
+
+Por ahora, no evaluaremos contexto ni estados globales.
+
+
+
+Pueden ir mostrandome los adelantos para corregir posibles errores y para potenciar algunos caminos bien elegidos. 
+
