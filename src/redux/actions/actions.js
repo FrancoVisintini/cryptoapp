@@ -1,5 +1,4 @@
-export const GET_ARS_TO_USD = "GET_ARS_TO_USD"
-export const CHANGE_USD_TYPE ='CHANGE_USD_TYPE'
+import {GET_ARS_TO_USD, CHANGE_USD_TYPE} from '../actionTypes'
 
 export function getARStoUSD(){
     return async function(dispatch){
