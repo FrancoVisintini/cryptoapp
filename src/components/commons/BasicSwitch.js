@@ -3,7 +3,7 @@ import Switch from '@mui/material/Switch';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useDispatch } from 'react-redux';
-import { changeUSDtype } from '../../redux/actions';
+import { changeUSDtype } from '../../redux/actions/actions';
 
 export default function BasicSwitch() {
 

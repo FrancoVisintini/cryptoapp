@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import {useDispatch} from 'react-redux';
 import Loading from "../commons/Loading";
 import StickyHeadTable from "../commons/StickyHeadTable";
-import { getARStoUSD } from "../../redux/actions";
+import { getARStoUSD } from "../../redux/actions/actions";
 
 const columns = [
     { id: 'rank', label: 'Rank', minWidth: 50 },

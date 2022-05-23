@@ -1,7 +1,7 @@
 import { 
     GET_ARS_TO_USD,
     CHANGE_USD_TYPE
-} from './actions'
+} from '../actions/actions'
 
 const initialState = {
     arsToUsd_Oficial:1,
