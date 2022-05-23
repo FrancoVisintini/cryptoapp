@@ -9,14 +9,21 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import BasicSwitch from './BasicSwitch';
 import { useSelector } from 'react-redux'; 
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 export default function StickyHeadTable({columns, rows}) {
+  const navigate = useNavigate();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
   const change  = useSelector(state => state[`arsToUsd_${state.typeUSD}`])
 
+  const handleClick = (id) => {
+    console.log('esto imprimo ',id)
+    navigate(`/coins/${id}`);
+}
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -54,7 +61,7 @@ export default function StickyHeadTable({columns, rows}) {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
                 return (
-                    <TableRow hover role="checkbox" tabIndex={-1} key={row.rank}>
+                  <TableRow hover role="checkbox" tabIndex={-1} key={row.rank} component={Link} to={`/coins/${row.id}`}>
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (

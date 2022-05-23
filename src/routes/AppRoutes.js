@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import CoinsTable from "../components/CoinsTable";
+import CoinsTable from "../components/CoinsTable/CoinsTable";
+import DetailCoin from "../components/DetailCoin";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import NavBar from "../components/NavBar/NavBar";
@@ -15,6 +16,7 @@ export default function AppRoutes(){
                 <Route index element={<Home/>}/>
                 <Route path='/about' element={<About/>}/>
                 <Route path='/coins' element={<CoinsTable/>}/>
+                <Route path='/coins/:coinID' element={<DetailCoin/>}/>
             </Routes>
             <Footer/>
         </Router>

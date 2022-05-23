@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import {useDispatch} from 'react-redux';
-import Loading from "./commons/Loading";
-import StickyHeadTable from "./commons/StickyHeadTable";
-import { getARStoUSD } from "../redux/actions";
+import Loading from "../commons/Loading";
+import StickyHeadTable from "../commons/StickyHeadTable";
+import { getARStoUSD } from "../../redux/actions";
 
 const columns = [
     { id: 'rank', label: 'Rank', minWidth: 50 },
@@ -32,6 +32,7 @@ export default function CoinsTable (){
             .then(res => res.json())
             .then(data => data.coins.map((coin) => {
                 return {
+                    id:coin.id,
                     rank: coin.rank,
                     name: coin.name,
                     symbol:coin.symbol,
