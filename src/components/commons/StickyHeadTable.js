@@ -7,10 +7,16 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import BasicSwitch from './BasicSwitch';
+import { useSelector } from 'react-redux'; 
+
 
 export default function StickyHeadTable({columns, rows}) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+  const change  = useSelector(state => state[`arsToUsd_${state.typeUSD}`])
+
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -23,7 +29,7 @@ export default function StickyHeadTable({columns, rows}) {
 
   return (
     <Paper sx={{ width: '100%', overflow: 'hidden'}}>
-      <TableContainer sx={{ maxHeight: 440 }}>
+      <TableContainer sx={{ maxHeight: 500 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
@@ -33,7 +39,12 @@ export default function StickyHeadTable({columns, rows}) {
                   align={column.align}
                   style={{ minWidth: column.minWidth }}
                 >
-                  {column.label}
+                  {column.id==='priceARS' ? 
+                  <div>
+                    {column.label}
+                    <BasicSwitch/>
+                  </div>
+                   : column.label}
                 </TableCell>
               ))}
             </TableRow>
@@ -43,14 +54,15 @@ export default function StickyHeadTable({columns, rows}) {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.rank}>
+                    <TableRow hover role="checkbox" tabIndex={-1} key={row.rank}>
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
                         <TableCell key={column.id} align={column.align}>
                           {column.format && typeof value === 'number'
-                            ? column.format(value)
-                            : value}
+                            ? column.id==='priceARS' ? column.format(value*change) : column.format(value)
+                            : value
+                          }
                         </TableCell>
                       );
                     })}

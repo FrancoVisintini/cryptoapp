@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
+import {useDispatch} from 'react-redux';
 import Loading from "./commons/Loading";
 import StickyHeadTable from "./commons/StickyHeadTable";
+import { getARStoUSD } from "../redux/actions";
 
 const columns = [
     { id: 'rank', label: 'Rank', minWidth: 50 },
     { id: 'name', label: 'Name', minWidth: 50 },
     { id: 'symbol', label: 'Code', minWidth: 50 },
-    { id: 'priceUSD', label: 'Price in USD', minWidth: 50, align: 'right', format: (value) => value.toFixed(6),},
-    { id: 'priceARS', label: 'Price in  ARS', minWidth: 50, align: 'right', format: (value) => value.toFixed(2),},
+    { id: 'priceUSD', label: 'Price in USD', minWidth: 50, align: 'right', format: (value) => Intl.NumberFormat('es-AR').format(value)},
+    { id: 'priceARS', label: 'Price in  ARS', minWidth: 50, align: 'right', format: (value) => Intl.NumberFormat('es-AR').format(value)},
     { id: 'variation', label: '24hr Variation', minWidth: 50, align: 'right', format: (value) => value.toFixed(2),},
   ];
   
@@ -15,18 +17,15 @@ const columns = [
 
 export default function CoinsTable (){
 
+    const dispatch  = useDispatch();
+
     const [coins, setCoins] = useState([])
-    const [arsToUsd, setArsToUsd] = useState()
     const [loading, setLoading] = useState(true)
 
     useEffect(()=>{
-        fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
-        .then(res => res.json())
-        .then(data => data.map(e => {return {dolarType: e.casa.nombre, price: e.casa.venta}}))
-        .then(change => {setArsToUsd(change)})
+        dispatch(getARStoUSD());    
+        //eslint-disable-next-line 
     },[])
-
-    console.log(arsToUsd)
 
     useEffect(()=>{
         fetch('https://api.coinstats.app/public/v1/coins?currency=USD')
@@ -37,7 +36,7 @@ export default function CoinsTable (){
                     name: coin.name,
                     symbol:coin.symbol,
                     priceUSD: coin.price,
-                    priceARS: coin.price*200,
+                    priceARS: coin.price,
                     variation: coin.priceChange1d+'%'
                 }}))
             .then(filteredData => {
@@ -54,8 +53,11 @@ export default function CoinsTable (){
 			loading 
 			?
             <Loading/>
-			: 
-			<StickyHeadTable columns={columns} rows={coins}/>
+			:
+            <div>
+                <StickyHeadTable columns={columns} rows={coins}/>
+            </div> 
+			
 			}
 			
 		</>    
