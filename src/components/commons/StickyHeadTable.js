@@ -18,7 +18,7 @@ export default function StickyHeadTable({columns, rows}) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
-  const change  = useSelector(state => state[`arsToUsd_${state.typeUSD}`])
+  
 
   const handleClick = (id) => {
     console.log('esto imprimo ',id)
@@ -67,7 +67,7 @@ export default function StickyHeadTable({columns, rows}) {
                       return (
                         <TableCell key={column.id} align={column.align}>
                           {column.format && typeof value === 'number'
-                            ? column.id==='priceARS' ? column.format(value*change) : column.format(value)
+                            ? column.format(value)
                             : value
                           }
                         </TableCell>

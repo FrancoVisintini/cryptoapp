@@ -4,7 +4,7 @@ import {
 } from '../actionTypes'
 
 const initialState = {
-    arsToUsd_Oficial:1,
+    arsToUsd_Official:1,
     arsToUsd_Blue:1,
     typeUSD:'Blue',
     reset: true
@@ -16,7 +16,7 @@ function rootReducer(state=initialState, action){
         case GET_ARS_TO_USD:
             return{   
                 ...state,
-                arsToUsd_Oficial: parseFloat(action.payload[0].price),
+                arsToUsd_Official: parseFloat(action.payload[0].price),
                 arsToUsd_Blue: parseFloat(action.payload[1].price)
             }
         case CHANGE_USD_TYPE:

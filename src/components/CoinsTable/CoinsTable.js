@@ -3,6 +3,7 @@ import {useDispatch} from 'react-redux';
 import Loading from "../commons/Loading";
 import StickyHeadTable from "../commons/StickyHeadTable";
 import { getARStoUSD } from "../../redux/actions/actions";
+import { useSelector } from 'react-redux'; 
 
 const columns = [
     { id: 'rank', label: 'Rank', minWidth: 50 },
@@ -18,6 +19,8 @@ const columns = [
 export default function CoinsTable (){
 
     const dispatch  = useDispatch();
+
+    const change  = useSelector(state => state[`arsToUsd_${state.typeUSD}`])
 
     const [coins, setCoins] = useState([])
     const [loading, setLoading] = useState(true)
@@ -37,7 +40,7 @@ export default function CoinsTable (){
                     name: coin.name,
                     symbol:coin.symbol,
                     priceUSD: coin.price,
-                    priceARS: coin.price,
+                    priceARS: coin.price*change,
                     variation: coin.priceChange1d+'%'
                 }}))
             .then(filteredData => {
@@ -45,7 +48,7 @@ export default function CoinsTable (){
                 setLoading(false);
             })
             
-    },[])
+    },[change])
 
 
     return(

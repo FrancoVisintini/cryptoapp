@@ -12,13 +12,13 @@ export default function BasicSwitch() {
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
-    event.target.checked ? dispatch(changeUSDtype('Blue')) : dispatch(changeUSDtype('Oficial')) 
+    event.target.checked ? dispatch(changeUSDtype('Blue')) : dispatch(changeUSDtype('Official')) 
   };
 
 
   return (
     <Stack direction="row"  alignItems="center" justifyContent="end">
-        <Typography>Oficial</Typography>
+        <Typography>Official</Typography>
         <Switch size="small"
           checked={checked}
           onChange={handleChange}
