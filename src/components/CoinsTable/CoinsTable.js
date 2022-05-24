@@ -17,7 +17,7 @@ const columns = [
 
 
 export default function CoinsTable (){
-
+// acá meti un cambio
     const dispatch  = useDispatch();
 
     const change  = useSelector(state => state[`arsToUsd_${state.typeUSD}`])
