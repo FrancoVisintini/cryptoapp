@@ -26,11 +26,11 @@ export default function StickyHeadTable({columns, rows}) {
       <TableContainer sx={{ maxHeight: 450 }}>
         <Table stickyHeader aria-label="sticky table">
           <HeadTable columns={columns} idSwitch='priceARS'/>
-          <BodyTable columns={columns} rows={rows}/>
+          <BodyTable columns={columns} rows={rows} page={page} rowsPerPage={rowsPerPage}/>
         </Table>
       </TableContainer>
       <TablePagination
-        rowsPerPageOptions={[5, 10, 25, 100]}
+        rowsPerPageOptions={[10, 25, 100]}
         component="div"
         count={rows.length}
         rowsPerPage={rowsPerPage}

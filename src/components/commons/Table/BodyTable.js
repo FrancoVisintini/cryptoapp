@@ -4,10 +4,7 @@ import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 import { Link } from 'react-router-dom';
 
-export default function BodyTable({columns, rows }){
-
-    const [page, setPage] = useState(0);
-    const [rowsPerPage, setRowsPerPage] = useState(10);
+export default function BodyTable({columns, rows, page, rowsPerPage }){
 
     return(
         <TableBody>
