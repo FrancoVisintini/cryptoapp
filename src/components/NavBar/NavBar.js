@@ -24,11 +24,11 @@ const NavBar = () => {
 			<NavLink to="/about" className="nav-link" >
 				About
 			</NavLink>
-			<NavLink to="/contact" style={({isActive }) => isActive ? activeStyle : undefined } className="nav-link">
-				Contacto 
+			<NavLink to="/contact" className="nav-link">
+				Contact 
 			</NavLink>
-			<NavLink to="/ruta-que-no-existe" style={({isActive }) => isActive ? activeStyle : undefined } className="nav-link">
-				Desconocido 
+			<NavLink to="/not-found" className="nav-link">
+				Not Found 
 			</NavLink>
 			<NavLink to='/under_construction' className="nav-link" >Under Construction</NavLink>
 			
