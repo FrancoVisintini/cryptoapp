@@ -6,6 +6,7 @@ import ButtonBase from '@mui/material/ButtonBase';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Img = styled('img')({
   margin: 'auto',
@@ -59,20 +60,25 @@ export default function DetailCoin() {
             <Grid item xs={12} sm container>
                 <Grid item xs container direction="column" spacing={2}>
                     <Grid item xs>
-                    <Typography gutterBottom variant="h3" component="div">
-                        {coin.name}
-                    </Typography>
-                    <Typography variant="h5" color="text.secondary">
-                        {coin.symbol}
-                    </Typography>
-                    <Typography variant="body1" gutterBottom>
-                        Price USD: {coin.priceUSD}
-                    </Typography>
+                        <Typography gutterBottom variant="h3" component="div">
+                            {coin.name}
+                        </Typography>
+                        <Typography variant="h5" color="text.secondary">
+                            {coin.symbol}
+                        </Typography>
+                        <Typography variant="body1" gutterBottom>
+                            Price USD: {coin.priceUSD}
+                        </Typography>
+                        <Button component="div" href={coin.websiteUrl}>
+                            <Typography variant="body1" gutterBottom >
+                                Website
+                            </Typography>
+                        </Button>
                     </Grid>
-                    <Button href='/coins' xs={4}>
-                    <Typography sx={{ cursor: 'pointer' }} variant="body2">
-                        Back
-                    </Typography>
+                    <Button href='/coins' component="div" variant="contained">
+                            <Typography sx={{ cursor: 'pointer' }} variant="body2">
+                                Back
+                            </Typography>
                     </Button>
                 </Grid>
             </Grid>
