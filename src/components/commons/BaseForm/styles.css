@@ -1,25 +1,6 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-tap-highlight-color: transparent;
-  }
-  
-  html {
-    font-size: 16px;
-    font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
-      "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial,
-      sans-serif;
-    margin: 0;
-    padding: 0;
-    text-decoration-skip-ink: "auto";
-  }
-  
+ 
   :root {
-    --gray-900: rgb(25, 23, 44);
+    --gray-900: rgb(20, 19, 31);
     --gray-800: #2d3748;
     --gray-700: #4a5568;
     --gray-600: #718096;
@@ -53,19 +34,11 @@
     --focus-ring-color: var(--blue-500);
   }
   
-  body {
-    padding: 0;
-    background-color: white;
-    font-weight: 400;
-    line-height: 1.563;
-    color: var(--text-color);
-    caret-color: var(--text-color);
-  }
   
   @media (prefers-color-scheme: dark) {
     body {
       color: white;
-      background-color: var(--gray-900);
+      background-color: var(--gray-800);
       caret-color: white;
     }
   }
@@ -200,7 +173,7 @@
     input[type="email"],
     input[type="text"],
     input[type="number"] {
-      background-color: var(--gray-800);
+      background-color: var(--gray-900);
       border-color: var(--gray-700);
       color: white;
     }
@@ -426,136 +399,6 @@
     outline: none;
   }
   
-  /* Tables
-  ––––––––––––––––––––––––––––––––– */
-  table {
-    width: 100%;
-    border-spacing: 0;
-    margin-bottom: 1.563rem;
-    font-variant-numeric: tabular-nums;
-  }
-  
-  th,
-  td {
-    padding: 0.5rem 0.5rem 0.5rem 0;
-    margin: 0;
-  }
-  
-  th {
-    font-weight: bold;
-    text-align: left;
-    border-bottom: 2px solid var(--gray-300);
-    color: var(--gray-300);
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    th {
-      border-color: var(--gray-700);
-      color: var(--gray-700);
-    }
-  }
-  
-  td {
-    border-bottom: 2px solid var(--gray-300);
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    td {
-      border-color: var(--gray-700);
-    }
-  }
-  
-  /* Code
-  ––––––––––––––––––––––––––––––––– */
-  code {
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
-      monospace;
-    font-size: 0.8rem;
-    white-space: nowrap;
-    background: var(--gray-100);
-    padding: 0 0.328rem;
-    display: inline-block;
-    vertical-align: middle;
-    border-radius: 10px;
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    code {
-      background-color: var(--gray-700);
-    }
-  }
-  
-  p > code {
-    white-space: normal;
-  }
-  
-  pre > code {
-    line-height: 1.563em;
-    display: block;
-    padding: 1rem;
-    white-space: pre;
-    margin-bottom: 1.563rem;
-    overflow: scroll;
-  }
-  
-  /* Forces a new-line at the end of a code block for layout purposes. */
-  pre > code::after {
-    content: " ";
-  }
-  
-  /* Blockquote
-  ––––––––––––––––––––––––––––––––– */
-  blockquote {
-    border-left: 0.25rem solid var(--gray-100);
-    padding: 0 1rem;
-    margin-bottom: 1.563rem;
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    blockquote {
-      border-left: 0.25rem solid var(--gray-700);
-    }
-  }
-  
-  /* List
-  ––––––––––––––––––––––––––––––––– */
-  ul {
-    margin: 0;
-    padding: 0 1px;
-    list-style: disc outside;
-    font-variant-numeric: tabular-nums;
-  }
-  
-  ol {
-    list-style: decimal outside;
-  }
-  
-  ol,
-  ul {
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 1.563rem;
-  }
-  
-  li {
-    list-style-position: inside;
-  }
-  
-  /* Keyboard
-  ––––––––––––––––––––––––––––––––– */
-  kbd {
-    display: inline-block;
-    padding: 0 0.328rem;
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
-      monospace;
-    font-size: 0.64rem;
-    color: var(--gray-700);
-    vertical-align: middle;
-    background-color: var(--gray-100);
-    border: solid 1px var(--gray-300);
-    border-bottom: solid 2px var(--gray-500);
-    border-radius: 5px;
-  }
   
   /* Abbreviation
   ––––––––––––––––––––––––––––––––– */

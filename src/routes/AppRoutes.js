@@ -7,6 +7,7 @@ import Header from "../components/Header/Header";
 import NavBar from "../components/NavBar/NavBar";
 import About from "../views/About/About";
 import Home from "../views/Home/Home";
+import NotFound from "../views/NotFound/NotFound";
 
 export default function AppRoutes(){
     return(
@@ -19,7 +20,7 @@ export default function AppRoutes(){
                 <Route path='/coins/:coinID' element={<DetailCoin/>}/>
                 <Route path='/about' element={<About/>}/>
                 <Route path='/contact' element={<ContactForm/>}/>
-                {/* <Route path='*' element={<NotFound />} /> */}
+                <Route path='*' element={<NotFound />} />
 
             </Routes>
             <Footer/>

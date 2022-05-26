@@ -23,7 +23,7 @@ export default function StickyHeadTable({columns, rows}) {
 
   return (
     <Paper sx={{ width: '100%', overflow: 'hidden'}}>
-      <TableContainer sx={{ maxHeight: 500 }}>
+      <TableContainer sx={{ maxHeight: 450 }}>
         <Table stickyHeader aria-label="sticky table">
           <HeadTable columns={columns} idSwitch='priceARS'/>
           <BodyTable columns={columns} rows={rows}/>

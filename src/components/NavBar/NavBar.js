@@ -29,9 +29,7 @@ const NavBar = () => {
 			</NavLink>
 			<NavLink to="/not-found" className="nav-link">
 				Not Found 
-			</NavLink>
-			<NavLink to='/under_construction' className="nav-link" >Under Construction</NavLink>
-			
+			</NavLink>	
 		</nav>
 	);
 
