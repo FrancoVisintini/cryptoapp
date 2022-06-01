@@ -43,6 +43,7 @@ const BaseForm = ({initialValues, validationSchema}) => {
               return(
                 <MyTextInput
                   /* label={e.label} */
+                  key={e.name}
                   name={e.name}
                   type={e.type}
                   placeholder={e.placeholder}

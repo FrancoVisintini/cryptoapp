@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CoinsTable from "../components/CoinsTable/CoinsTable";
 import DetailCoin from "../components/DetailCoin/DetailCoin";
 import Footer from "../components/Footer/Footer";
-import ContactForm from "../components/Forms/ContactForm";
+import ContactForm from "../views/Contact/ContactForm";
 import Header from "../components/Header/Header";
 import NavBar from "../components/NavBar/NavBar";
 import About from "../views/About/About";

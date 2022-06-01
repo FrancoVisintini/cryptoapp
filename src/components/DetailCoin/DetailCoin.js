@@ -69,13 +69,13 @@ export default function DetailCoin() {
                         <Typography variant="body1" gutterBottom>
                             Price USD: {coin.priceUSD}
                         </Typography>
-                        <Button component="div" href={coin.websiteUrl}>
+                        <ButtonBase href={coin.websiteUrl}>
                             <Typography variant="body1" gutterBottom >
                                 Website
                             </Typography>
-                        </Button>
+                        </ButtonBase>
                     </Grid>
-                    <Button href='/coins' component="div" variant="contained">
+                    <Button component={Link} to='/coins'>
                             <Typography sx={{ cursor: 'pointer' }} variant="body2">
                                 Back
                             </Typography>

@@ -1,5 +1,5 @@
 import * as Yup from 'yup';
-import BaseForm from '../commons/BaseForm/BaseForm';
+import BaseForm from '../../components/commons/BaseForm/BaseForm';
 
 const initialValues = [
     {
